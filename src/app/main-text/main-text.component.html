@@ -1,0 +1,83 @@
+<div class="wrapper">
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        Original-Text
+        <button (click)="edit_original = true;autoComp()" mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngIf="!edit_original">
+      <span *ngFor="let w of displayText; index as i">
+
+        <span *ngIf="mode == 'all'" [class]="richtig[i]">{{w}} </span>
+        <span *ngIf="mode == 'beginning'" [class]="richtig[i]">{{w | slice:0:1}}... </span>
+<br *ngIf="w.includes('\n')">
+
+      </span>
+      </p>
+      <mat-form-field *ngIf="edit_original">
+
+
+
+        <textarea  (ngModelChange)="refreshOriginal()" [(ngModel)]="originalText" matInput placeholder="Hier Text schreiben"></textarea>
+
+
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="edit_original" mat-button (click)="edit_original = false">FERTIG</button>
+      <button *ngIf="edit_original" mat-button disabled>SPEICHERN</button>
+      <mat-button-toggle-group *ngIf="!edit_original" name="ingredients" aria-label="Ingredients" [(ngModel)]="mode">
+        <mat-button-toggle value="all">Ganzer Text</mat-button-toggle>
+        <mat-button-toggle value="beginning">Anfangsbuchstaben</mat-button-toggle>
+        <mat-button-toggle value="hidden">Alles verstecken</mat-button-toggle>
+      </mat-button-toggle-group>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        Schreiben
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <p *ngIf="comp" class="bewertung">
+       <span *ngFor="let w of inp; index as i">
+<br *ngIf="w.includes('\n')">
+
+        <span [class]="richtig[i]">{{w}} </span>
+
+      </span>
+      </p>
+      <mat-form-field *ngIf="!comp">
+
+
+        <textarea (ngModelChange)="autoComp()" [(ngModel)]="written" matInput
+                  placeholder="Hier Text schreiben"></textarea>
+
+
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button *ngIf="(!comp) && (written.length !== 0)" (click)="compare(true)">
+        <mat-icon>compare</mat-icon>
+      </button>
+
+      <button mat-icon-button *ngIf="comp" (click)="compare(false)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="written = ''; richtig=[];comp=false">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
