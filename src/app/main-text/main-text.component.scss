@@ -1,5 +1,9 @@
 mat-card{
-  margin:0.5cm
+  margin:0.5cm auto;
+  max-width: 30cm
+}
+.wrapper{
+  margin: 0.5cm;
 }
 mat-form-field{
   width:100%;

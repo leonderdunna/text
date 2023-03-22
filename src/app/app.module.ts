@@ -16,12 +16,20 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { TextMenuComponent } from './text-menu/text-menu.component';
 import {MatTreeModule} from "@angular/material/tree";
 import {FormsModule} from "@angular/forms";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { SaveComponent } from './save/save.component';
+import { LoadComponent } from './load/load.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
     AppComponent,
     MainTextComponent,
-    TextMenuComponent
+    TextMenuComponent,
+    SaveComponent,
+    LoadComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,11 @@ import {FormsModule} from "@angular/forms";
     MatDividerModule,
     MatButtonToggleModule,
     MatTreeModule,
-    FormsModule
+    FormsModule,
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

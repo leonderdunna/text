@@ -1,0 +1,13 @@
+<mat-dialog-content *ngIf="texte.length>0">
+
+
+  <mat-list><mat-list-item *ngFor="let d of texte">
+  <button  [mat-dialog-close]="d.text" mat-button>{{d.name}}</button>
+<span class="example-spacer"></span>
+    <button mat-icon-button (click)="delete(d.name)"><mat-icon>delete</mat-icon></button>
+    </mat-list-item>
+  </mat-list>
+</mat-dialog-content>
+<mat-dialog-content *ngIf="texte.length==0">
+  <p>Es wurden noch keine Texte gespeichert</p>
+</mat-dialog-content>
