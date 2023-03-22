@@ -13,7 +13,7 @@
       <p *ngIf="!edit_original">
         <span *ngFor="let w of displayText; index as i">
           <span *ngIf="mode == 'all'" [class]="richtig[i]">{{w}} </span>
-        <span *ngIf="mode == 'beginning'" [class]="richtig[i]">{{w | slice:0:1}}... </span>
+        <span id="first-letter" *ngIf="mode == 'beginning'" [class]="richtig[i]">{{w | slice:0:1}} </span>
         <br *ngIf="w.includes('\n') && mode != 'hidden'">
 
       </span>

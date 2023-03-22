@@ -7,18 +7,22 @@
   <mat-drawer-content>
 
     <mat-toolbar color="primary">
-<!--  <button mat-icon-button (click)="drawer.toggle()" class="example-icon"
-               aria-label="Example icon-button with menu icon">
-         <mat-icon>menu</mat-icon>
-       </button>
--->
+      <!--  <button mat-icon-button (click)="drawer.toggle()" class="example-icon"
+                     aria-label="Example icon-button with menu icon">
+               <mat-icon>menu</mat-icon>
+             </button>
+      -->
       <span>Cooler name für das Projekt</span>
       <span class="example-spacer"></span>
-<!--
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <a href="https://github.com/leonderdunna/text/issues" target="_blank">
+        <button aria-label="Example icon-button with share icon" class="example-icon" mat-icon-button>
+          <mat-icon>bug_report</mat-icon>
+        </button>
+      </a>
+      <button (click)="openSettings()" aria-label="Example icon-button with share icon" class="example-icon" mat-icon-button>
         <mat-icon>settings</mat-icon>
       </button>
--->
+
     </mat-toolbar>
 
 
