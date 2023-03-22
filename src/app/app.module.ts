@@ -9,11 +9,19 @@ import { MatIconModule} from "@angular/material/icon";
 import { MatCardModule} from "@angular/material/card";
 import { MainTextComponent } from './main-text/main-text.component';
 import { MatButtonModule} from "@angular/material/button";
+import { MatFormFieldModule} from "@angular/material/form-field";
+import { MatInputModule} from "@angular/material/input";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { TextMenuComponent } from './text-menu/text-menu.component';
+import {MatTreeModule} from "@angular/material/tree";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainTextComponent
+    MainTextComponent,
+    TextMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +30,13 @@ import { MatButtonModule} from "@angular/material/button";
     MatSidenavModule,
     MatIconModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDividerModule,
+    MatButtonToggleModule,
+    MatTreeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

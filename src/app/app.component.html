@@ -1,16 +1,16 @@
 <mat-drawer-container class="example-container">
 
-  <mat-drawer #drawer mode="side">
+  <mat-drawer #drawer mode="over">
 
-    <span></span>
+    <app-text-menu></app-text-menu>
   </mat-drawer>
   <mat-drawer-content>
 
     <mat-toolbar color="primary">
-      <!-- <button mat-icon-button (click)="drawer.toggle()" class="example-icon"
+      <button mat-icon-button (click)="drawer.toggle()" class="example-icon"
                aria-label="Example icon-button with menu icon">
          <mat-icon>menu</mat-icon>
-       </button> -->
+       </button>
       <span>Cooler name für das Projekt</span>
       <span class="example-spacer"></span>
 
